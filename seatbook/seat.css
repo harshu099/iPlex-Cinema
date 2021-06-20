@@ -1,0 +1,17 @@
+body{
+    background: url(/seatbook/img/hall.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+h1{
+    color:#940000bd;
+    font-size: 80px;
+    font-style: italic;
+    font-weight: bold;
+}
+label{
+    font-size: 20px;
+}
+.seat_container{
+    color: black;
+    font-weight: bold;
+}
