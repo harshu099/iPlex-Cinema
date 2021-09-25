@@ -11,7 +11,22 @@ h1{
 label{
     font-size: 20px;
 }
+select {
+    width:200px;
+    height: 32px;
+}
 .seat_container{
     color: black;
     font-weight: bold;
+}
+@media print {
+    .noPrint{
+      display:none;
+    }
+}
+#title{
+    margin-top: 0px;
+}
+#back{
+    margin: 12px;
 }

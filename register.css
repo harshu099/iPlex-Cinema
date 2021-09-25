@@ -13,3 +13,7 @@ span{
     margin-top: 150px;
     width: 25%;
 }
+.form-floating {
+    position: relative;
+    margin: 12px;
+}
