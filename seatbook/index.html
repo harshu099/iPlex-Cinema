@@ -28,19 +28,32 @@
 	<!-- APP CSS -->
 	<link rel="stylesheet" href="grid.css">
 	<link rel="stylesheet" href="app.css">
-	<script src="/work.js"></script>
 
 </head>
 
 <body>
-
+	<a href="/index1.html"><button id="back">Back To Home</button></a>
 	<div class="seat_container">
 		<div class="text-center">
 			<label id='title'>
 				<h1>Book Your Seats</h1>
 			</label>
 		</div>
-		<form class='form-inline selectionForm'>
+		<div class="text-center">
+			<label for="name">Movie Name:</label>
+			<select name="movies" id="movies">
+				<option>Select Movies</option>
+				<option>Avenger Endgame</option>
+				<option>Coolie No.1</option>
+				<option>Radhe</option>
+				<option>Bahubali 2</option>
+				<option>Baaghi 3</option>
+				<option>Captain Marvel</option>
+				<option>Transformer</option>
+				<option>Coco</option>
+			</select>
+		</div>
+		<form class='form-inline selectionForm noPrint'>
 			<div class="form-group required">
 				<label for="name">Name:</label>
 				<input type="text" class="form-control" id='name' placeholder="Enter Your Name" required="required" />
@@ -56,9 +69,15 @@
 			</div>
 			<div class="form-group required">
 				<label for="time">Select Time:</label>
-				<input type="radio" name="mytime" class="form-control" required="required" value="8 AM - 11 AM" />[8 AM - 11 AM]
-				<input type="radio" name="mytime" class="form-control" required="required" value="12 AM - 3 PM" />[12 AM - 3 PM]
-				<input type="radio" name="mytime" class="form-control" required="required" value="5 PM - 8 PM" />[5 PM - 8 PM]
+				<input type="radio" name="mytime" class="form-control" required="required" value="8 AM - 11 AM" />[8 AM
+				- 11
+				AM]
+				<input type="radio" name="mytime" class="form-control" required="required" value="12 AM - 3 PM" />[12 AM
+				- 3
+				PM]
+				<input type="radio" name="mytime" class="form-control" required="required" value="5 PM - 8 PM" />[5 PM -
+				8
+				PM]
 			</div>
 
 			<div class="text-center">
@@ -107,7 +126,8 @@
 			</table>
 
 			<div class="text-center">
-				<button type="button" class="btn btn-primary btn-lg submitBtn" id="confirmSelection" onclick="myFunction()">Confirm
+				<button type="button" class="btn btn-primary btn-lg submitBtn" id="confirmSelection"
+					onclick="myFunction()">Confirm
 					Selection</button>
 				<div class="screen-map">
 					<label for="empty-seat-map">Selected Seat</label>
@@ -129,9 +149,11 @@
 						<th class="seat_container">Name</th>
 						<th class="seat_container">Number of Seats</th>
 						<th class="seat_container">Seats</th>
+						<th class="seat_container">Movie</th>
 						<th class="seat_container">Date</th>
 						<th class="seat_container">Time</th>
-						<th class="seat_container"></th>
+						<th class="seat_container">Price</th>
+						<th class="seat_container">Status</th>
 
 				</thead>
 				<tbody id="ticket-sold-info">
@@ -141,9 +163,11 @@
 								<td class="seat_container"><%-item.names%></td>
 								<td class="seat_container"><%-item.numbers%></td>
 								<td class="seat_container"><%-item.seats%></td>
-								<td class="seat_container">8 AM - 11 AM</p>
-								<td class="seat_container">06/16/2021</td>
-								<td class="seat_container"><a href="/seatbook/print.html"><button>Print Ticket</button></a></td>
+								<td class="seat_container" id="Movie_Name">Radhe</td>
+								<td class="seat_container">16/09/2021</td>
+								<td class="seat_container">8 AM - 11 AM</td>
+								<td class="seat_container">Rs. 150/-</p>
+								<td class="seat_container"><a href="/seatbook/payment.html"><button>Payment</button></a>
 							</tr>
 						<%})%>
 					</script>
@@ -152,6 +176,14 @@
 		</div>
 	</div>
 </body>
+<script>
+	$(document).on('change', '#movies', function() {
+	 var Movie_Name = $("#movies option:selected").text();
+	 $("#Movie_Name").text(Movie_Name);
+
+	//  alert(Movie_Name);
+	});
+</script>
 <script type="text/javascript" src="js/prima.js"></script>
 
 </html>
