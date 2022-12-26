@@ -1,3 +1,3 @@
 # iPlex-Cinema
-It's an online mutiplex ticket booking website using Jquery.
+It's a fully frontend online mutiplex ticket booking website.
 HTML, CSS and JavaScript for Frontend.
